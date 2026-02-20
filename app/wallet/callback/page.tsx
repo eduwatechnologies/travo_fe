@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import DashboardLayout from '@/components/dashboard-layout'
 import { useAuth } from '@/lib/auth-context'
@@ -11,7 +11,7 @@ import { CheckCircle2, Loader2, XCircle } from 'lucide-react'
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
 
-export default function WalletCallbackPage() {
+function WalletCallbackContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const { token } = useAuth()
@@ -123,3 +123,27 @@ export default function WalletCallbackPage() {
   )
 }
 
+export default function WalletCallbackPage() {
+  return (
+    <Suspense
+      fallback={
+        <DashboardLayout active="wallet">
+          <div className="flex min-h-[60vh] items-center justify-center p-6">
+            <Card className="max-w-md w-full">
+              <CardHeader>
+                <CardTitle>Wallet Top Up</CardTitle>
+                <CardDescription>Preparing your payment verification...</CardDescription>
+              </CardHeader>
+              <CardContent className="flex flex-col items-center gap-3">
+                <Loader2 className="h-6 w-6 animate-spin text-primary" />
+                <p className="text-sm text-muted-foreground">Loading callback details...</p>
+              </CardContent>
+            </Card>
+          </div>
+        </DashboardLayout>
+      }
+    >
+      <WalletCallbackContent />
+    </Suspense>
+  )
+}
