@@ -8,7 +8,7 @@ interface LogoProps {
   size?: number
 }
 
-export function Logo({ href = '/', showText = true, collapsed = false, size = 32 }: LogoProps) {
+export function Logo({ href = '/', showText = true, collapsed = false, size = 40 }: LogoProps) {
   const content = (
     <div className="flex items-center gap-2 font-bold text-xl">
       <div
