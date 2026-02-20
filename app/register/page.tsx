@@ -36,7 +36,7 @@ export default function RegisterPage() {
       <div className="w-full max-w-md">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-foreground mb-2">Create account</h1>
-          <p className="text-muted-foreground">Sign up for SendHub to start sending messages</p>
+          <p className="text-muted-foreground">Sign up for Travo to start sending messages</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">

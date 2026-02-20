@@ -9,7 +9,7 @@ const _geist = Geist({ subsets: ['latin'] })
 const _geistMono = Geist_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'SendHub - SMS & Email Platform',
+  title: 'Travo - SMS & Email Platform',
   description: 'Developer-friendly SMS and email messaging platform',
   generator: 'v0.app',
 }

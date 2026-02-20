@@ -1,15 +1,14 @@
 'use client'
 
 import Link from 'next/link'
+import { Logo } from '@/components/logo'
 
 export default function DocsPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="flex justify-between items-center px-8 py-4 border-b border-border">
-        <Link href="/" className="text-2xl font-bold text-primary">
-          SendHub
-        </Link>
+        <Logo />
         <div className="flex gap-4">
           <Link href="/login" className="px-6 py-2 text-foreground hover:text-primary transition">
             Login
@@ -26,7 +25,7 @@ export default function DocsPage() {
       <div className="max-w-6xl mx-auto px-8 py-16">
         <h1 className="text-5xl font-bold text-foreground mb-4 text-balance">Documentation</h1>
         <p className="text-xl text-muted-foreground mb-12 text-balance">
-          Everything you need to integrate SendHub into your application
+          Everything you need to integrate Travo into your application
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -195,7 +194,7 @@ export default function DocsPage() {
             <div>
               <p className="font-semibold text-foreground mb-2">JavaScript/Node.js:</p>
               <pre className="bg-secondary p-4 rounded text-xs text-foreground overflow-x-auto">
-{`const response = await fetch('https://api.sendhub.io/sms/send', {
+{`const response = await fetch('https://api.travo.io/sms/send', {
   method: 'POST',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY',
@@ -203,7 +202,7 @@ export default function DocsPage() {
   },
   body: JSON.stringify({
     phone: '+1234567890',
-    message: 'Hello from SendHub!',
+    message: 'Hello from Travo!',
     senderId: 'MyApp'
   })
 });`}
@@ -216,11 +215,11 @@ export default function DocsPage() {
 {`import requests
 
 response = requests.post(
-  'https://api.sendhub.io/sms/send',
+  'https://api.travo.io/sms/send',
   headers={'Authorization': 'Bearer YOUR_API_KEY'},
   json={
     'phone': '+1234567890',
-    'message': 'Hello from SendHub!',
+    'message': 'Hello from Travo!',
     'senderId': 'MyApp'
   }
 )`}

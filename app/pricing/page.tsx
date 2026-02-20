@@ -1,15 +1,14 @@
 'use client'
 
 import Link from 'next/link'
+import { Logo } from '@/components/logo'
 
 export default function PricingPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="flex justify-between items-center px-8 py-4 border-b border-border">
-        <Link href="/" className="text-2xl font-bold text-primary">
-          SendHub
-        </Link>
+        <Logo />
         <div className="flex gap-4">
           <Link href="/login" className="px-6 py-2 text-foreground hover:text-primary transition">
             Login

@@ -14,7 +14,6 @@ import {
   Webhook, 
   Settings, 
   LogOut,
-  Zap,
   ChevronLeft,
   ChevronRight,
   ArrowUpRight,
@@ -25,6 +24,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import { Logo } from '@/components/logo'
 
 interface DashboardLayoutProps {
   children: ReactNode
@@ -111,14 +111,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         </button>
 
         <div className={`p-6 border-b border-border flex items-center gap-2 ${isCollapsed ? 'justify-center px-2' : ''}`}>
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground shrink-0">
-            <Zap className="w-5 h-5 fill-current" />
-          </div>
-          {!isCollapsed && (
-            <h1 className="text-xl font-bold text-foreground overflow-hidden whitespace-nowrap transition-all duration-300">
-          Travo
-            </h1>
-          )}
+          <Logo href="/dashboard" showText={!isCollapsed} collapsed={isCollapsed} size={32} />
         </div>
 
         <nav className="flex-1 p-4 space-y-1">

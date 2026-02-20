@@ -5,6 +5,7 @@ import { useAuth } from '@/lib/auth-context'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { Logo } from '@/components/logo'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('demo@example.com')
@@ -34,25 +35,7 @@ export default function LoginPage() {
         <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl" />
         
         <div className="relative z-10">
-          <Link href="/" className="flex items-center gap-2 text-2xl font-bold">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-white"
-              >
-                <path d="M22 2L11 13" />
-                <path d="M22 2l-7 20-4-9-9-4 20-7z" />
-              </svg>
-            </div>
-            SendHub
-          </Link>
+          <Logo />
         </div>
 
         <div className="relative z-10 space-y-6">
@@ -77,7 +60,7 @@ export default function LoginPage() {
 
         <div className="relative z-10">
           <p className="text-slate-400 text-sm">
-            © 2024 SendHub Inc. All rights reserved.
+            © 2024 Travo Inc. All rights reserved.
           </p>
         </div>
       </div>
